@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="xyz.leapmind.ceb.campus_e_board">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Teacher"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Student"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Forgot"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Register"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Login"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterTeacher"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterStudent"></activity>
+
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Splash"></activity>
+    </application>
+
+</manifest>

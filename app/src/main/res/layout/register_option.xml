@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/linerlayout_bg"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:text="@string/string"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_student"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@null"
+            android:padding="5dp"
+            android:text="@string/student"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@null"
+            android:padding="5dp"
+            android:text="@string/teacher"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+</RelativeLayout>
