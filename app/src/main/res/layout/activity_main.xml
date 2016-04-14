@@ -15,6 +15,8 @@
     <Button
         android:id="@+id/btn_login"
         style="@style/DefaultButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/button_default_bg"
         android:padding="5dp"
