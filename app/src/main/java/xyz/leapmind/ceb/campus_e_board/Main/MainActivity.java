@@ -14,7 +14,7 @@ import xyz.leapmind.ceb.campus_e_board.R;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    private Button login, register;
+    private Button loginStudent, loginTeacher, register;
 
 
     @Override
@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login = (Button) findViewById(R.id.btn_login);
+        loginStudent = (Button) findViewById(R.id.btn_login_student);
+        loginTeacher = (Button) findViewById(R.id.btn_login_teacher);
         register = (Button) findViewById(R.id.btn_reg);
 
-        login.setOnClickListener(this);
+        loginStudent.setOnClickListener(this);
+        loginTeacher.setOnClickListener(this);
         register.setOnClickListener(this);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -50,14 +52,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public void onClick(View v) {
         // TODO Auto-generated method stub
         switch (v.getId()) {
-            case R.id.btn_login:
-                Intent obj = new Intent(MainActivity.this, Login.class);
-                startActivity(obj);
+            case R.id.btn_login_student:
+                Intent obj1 = new Intent(MainActivity.this, Login.class);
+                startActivity(obj1);
+                break;
+
+            case R.id.btn_login_teacher:
+                Intent obj2 = new Intent(MainActivity.this, Login.class);
+                startActivity(obj2);
                 break;
 
             case R.id.btn_reg:
-                Intent obj1 = new Intent(MainActivity.this, Register.class);
-                startActivity(obj1);
+                Intent obj3 = new Intent(MainActivity.this, Register.class);
+                startActivity(obj3);
                 break;
 
         }

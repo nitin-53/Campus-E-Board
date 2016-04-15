@@ -10,28 +10,78 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="xyz.leapmind.ceb.campus_e_board.Main.MainActivity">
 
-    <!-- Button Label-->
-
-    <Button
-        android:id="@+id/btn_login"
-        style="@style/DefaultButtonText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/button_default_bg"
-        android:padding="5dp"
-        android:text="@string/login" />
+        android:layout_centerInParent="true"
+        android:background="@drawable/linerlayout_bg"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-    <Button
-        android:id="@+id/btn_reg"
-        style="@style/DefaultButtonText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_login"
-        android:layout_margin="5dp"
-        android:background="@drawable/button_default_bg"
-        android:padding="5dp"
-        android:text="@string/register" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="@string/login_as"
+            android:textColor="@color/login_as"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Button Label-->
+
+            <Button
+                android:id="@+id/btn_login_student"
+                style="@style/DefaultButtonText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_default_bg"
+                android:padding="5dp"
+                android:text="@string/login_student"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_login_teacher"
+                style="@style/DefaultButtonText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_default_bg"
+                android:padding="5dp"
+                android:text="@string/login_teacher"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_reg"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/not_register"
+            android:textAllCaps="false"
+            android:textColor="@color/flat_btn_text"
+            android:textSize="18sp"
+            android:theme="@style/flat_btn" />
+
+
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -49,7 +49,7 @@ public class Splash extends AppCompatActivity implements OnClickListener {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("skipSplash", true);
-                editor.commit();
+                editor.apply();
             }
             finish();
         }

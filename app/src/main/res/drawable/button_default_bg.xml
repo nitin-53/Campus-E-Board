@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true">
+    <item android:state_pressed="false">
         <shape>
-            <solid android:color="#f8f9fa" />
-            <stroke android:width="1dp" android:color="#d2d2d2" />
-            <corners android:radius="1dp" />
+            <solid android:color="@color/btn_unpressed" />
+            <stroke android:width="1dp" android:color="@color/btn_unpressed" />
+            <corners android:radius="2dp" />
+            <size android:height="24dp" />
         </shape>
     </item>
 
-    <item>
+    <item android:state_pressed="true">
         <shape>
-            <gradient android:angle="270" android:endColor="#d2d2d2" android:startColor="#f8f9fa" />
-            <stroke android:width="1dp" android:color="#d2d2d2" />
-            <corners android:radius="1dp" />
+            <gradient android:angle="270" android:endColor="#bbdefb" android:startColor="@color/btn_unpressed" />
+            <stroke android:width="1dp" android:color="#bbdefb" />
+            <corners android:radius="2dp" />
 
         </shape>
     </item>
