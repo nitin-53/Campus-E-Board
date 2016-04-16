@@ -7,6 +7,7 @@
     <string name="pass">Password</string>
     <string name="login_student">Student</string>
     <string name="login_teacher">Teacher</string>
+    <string name="login">Login</string>
     <string name="forgot">Forgot?</string>
     <string name="register">Register</string>
     <string name="not_register">Not Registered yet!</string>
@@ -15,7 +16,10 @@
     <string name="string">Register As</string>
     <string name="close">Close</string>
     <string name="splashChk">Don\'t show this again</string>
-    <string name="login_as">Login As :</string>
+    <string name="login_as">Login As</string>
+    <string name="login_preference_file">xyz.leapmind.ceb.campus_e_board.Main.LOGIN_PREFERENCE_FILE_KEY</string>
+    <string name="student_login_preference">check_student_login</string>
+    <string name="teacher_login_preference">check_teacher_login</string>
 
 
 </resources>

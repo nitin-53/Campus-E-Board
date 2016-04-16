@@ -62,20 +62,21 @@
             android:layout_margin="2dp"
             android:background="@drawable/button_default_bg"
             android:padding="5dp"
-            android:text="@string/login_student" />
+            android:text="@string/login" />
 
         <!-- Link -->
-        <TextView
+        <Button
             android:id="@+id/forgot"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:padding="5dp"
+            android:gravity="center"
             android:text="@string/forgot"
-            android:textColor="#ffffff" />
+            android:textAllCaps="false"
+            android:textColor="@color/flat_btn_text"
+            android:textSize="16sp"
+            android:theme="@style/flat_btn" />
 
     </LinearLayout>
 
