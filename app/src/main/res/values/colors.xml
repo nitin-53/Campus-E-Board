@@ -3,7 +3,11 @@
     <color name="splash_bg">#FFFFFF</color>
     <color name="splash_txt">#DCEDC8</color>
     <color name="splashchk">#000000</color>
+    <color name="login_as">#ffffff</color>
     <color name="game_bg">#DDDDDD</color>
     <color name="line">#000000</color>
     <color name="position">#FF0000</color>
+    <color name="btn_unpressed">#64b5f6</color>
+    <color name="flat_btn_pressed">#f06292</color>
+    <color name="flat_btn_text">#e3f2fd</color>
 </resources>
