@@ -4,9 +4,9 @@ package xyz.leapmind.ceb.campus_e_board.Main;
  * Created by nitin on 11/4/16.
  */
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import xyz.leapmind.ceb.campus_e_board.R;
 
-public class Login extends Activity implements OnClickListener {
+public class Login extends AppCompatActivity implements OnClickListener {
     private EditText userId, pass;
     private Button login1;
     private String get_userName, get_password;

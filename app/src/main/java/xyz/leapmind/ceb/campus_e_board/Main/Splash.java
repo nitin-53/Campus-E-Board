@@ -4,10 +4,10 @@ package xyz.leapmind.ceb.campus_e_board.Main;
  * Created by nitin on 11/4/16.
  */
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -19,7 +19,7 @@ import xyz.leapmind.ceb.campus_e_board.Array.CollectionOfArray;
 import xyz.leapmind.ceb.campus_e_board.R;
 
 
-public class Splash extends Activity implements OnClickListener {
+public class Splash extends AppCompatActivity implements OnClickListener {
 
 
     public CollectionOfArray objArray;

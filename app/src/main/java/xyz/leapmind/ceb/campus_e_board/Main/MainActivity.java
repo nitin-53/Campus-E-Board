@@ -1,10 +1,10 @@
 package xyz.leapmind.ceb.campus_e_board.Main;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,7 +12,7 @@ import android.widget.Button;
 
 import xyz.leapmind.ceb.campus_e_board.R;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private Button login, register;
 
