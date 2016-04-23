@@ -19,11 +19,14 @@
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Student"></activity>
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Forgot"></activity>
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Register"></activity>
-        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Login"></activity>
+        <activity
+            android:name="xyz.leapmind.ceb.campus_e_board.Main.Login"
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterTeacher"></activity>
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterStudent"></activity>
 
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Splash"></activity>
+
     </application>
 
 </manifest>
