@@ -22,8 +22,12 @@
         <activity
             android:name="xyz.leapmind.ceb.campus_e_board.Main.Login"
             android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterTeacher"></activity>
-        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterStudent"></activity>
+        <activity
+            android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterTeacher"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterStudent"
+            android:windowSoftInputMode="adjustResize"></activity>
 
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Splash"></activity>
 
