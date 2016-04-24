@@ -13,7 +13,7 @@
     <string name="not_register">Not Registered yet!</string>
     <string name="student">Student</string>
     <string name="teacher">Teacher</string>
-    <string name="string">Register As</string>
+    <string name="register_as">Register As</string>
     <string name="close">Close</string>
     <string name="splashChk">Don\'t show this again</string>
     <string name="login_as">Login As</string>
