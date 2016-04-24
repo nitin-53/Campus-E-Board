@@ -17,7 +17,7 @@
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/etUserName"
+            android:id="@+id/teacher_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_top_bg"
@@ -28,7 +28,7 @@
             android:textColorHint="#bbbbbb" />
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/teacher_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
@@ -41,7 +41,7 @@
             android:textColorHint="#bbbbbb" />
 
         <EditText
-            android:id="@+id/etPhn"
+            android:id="@+id/teacher_phn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
@@ -54,12 +54,13 @@
             android:textColorHint="#bbbbbb" />
 
         <Button
-            android:id="@+id/btnSingIn"
+            android:id="@+id/btn_teacher_signUp"
             style="@style/DefaultButtonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:background="@drawable/button_default_bg"
+            android:onClick="teacherSignUp"
             android:padding="10dp"
             android:text="Sign Up" />
     </LinearLayout>
