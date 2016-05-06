@@ -17,5 +17,40 @@
     <string name="splashChk">Don\'t show this again</string>
     <string name="login_as">Login As :</string>
 
+    <string-array name="spclass">
+        <item>Class</item>
+        <item>IT</item>
+        <item>CSE</item>
+        <item>EEE</item>
+        <item>ECE</item>
+        <item>Bio.Tech</item>
+        <item>Mech.</item>
+    </string-array>
+
+    <string-array name="spsem">
+        <item>Semester</item>
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>5th</item>
+        <item>6th</item>
+        <item>7th</item>
+        <item>8th</item>
+    </string-array>
+
+    <string-array name="spsection">
+        <item>Section</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="spgroup">
+        <item>Group</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 
 </resources>
