@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_top_bg"
                 android:drawableLeft="@drawable/user"
+                android:drawablePadding="4dp"
                 android:hint="Name"
                 android:padding="10dp"
                 android:singleLine="true"
@@ -37,6 +38,7 @@
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
                 android:drawableLeft="@drawable/email"
+                android:drawablePadding="4dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
@@ -50,6 +52,7 @@
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
                 android:drawableLeft="@drawable/phone"
+                android:drawablePadding="4dp"
                 android:hint="Phone No"
                 android:inputType="number"
                 android:padding="10dp"
@@ -67,32 +70,27 @@
                 android:singleLine="true"
                 android:textColorHint="#bbbbbb" />
 
-            <EditText
-                android:id="@+id/etClass"
+            <Spinner
+                android:id="@+id/spClass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Class"
-                android:inputType="text"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:entries="@array/spclass"
+                android:padding="10dp" />
 
-            <EditText
-                android:id="@+id/etSemester"
+            <Spinner
+                android:id="@+id/spSemester"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
                 android:hint="Semester"
-                android:inputType="number"
                 android:padding="10dp"
-                android:singleLine="true"
                 android:textColorHint="#bbbbbb" />
 
-            <EditText
-                android:id="@+id/etSection"
+            <Spinner
+                android:id="@+id/spSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
@@ -103,8 +101,8 @@
                 android:singleLine="true"
                 android:textColorHint="#bbbbbb" />
 
-            <EditText
-                android:id="@+id/etGroup"
+            <Spinner
+                android:id="@+id/spGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
