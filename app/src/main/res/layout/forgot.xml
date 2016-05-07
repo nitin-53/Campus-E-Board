@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="Enter your registered Email Id..."
+            android:text="@string/get_reg_email"
             android:textColor="#000"
             android:textSize="24sp" />
 
@@ -31,7 +31,7 @@
             android:background="@drawable/edittext_top_bg"
             android:drawableLeft="@drawable/mess"
             android:drawablePadding="8dp"
-            android:hint="Registered Email Id"
+            android:hint="@string/enter_reg_email"
             android:padding="10dp"
             android:singleLine="true"
             android:textColorHint="#bbbbbb"
@@ -45,7 +45,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/button_default_bg"
             android:padding="10dp"
-            android:text="Submit" />
+            android:text="@string/submit" />
     </LinearLayout>
 
 </RelativeLayout>
