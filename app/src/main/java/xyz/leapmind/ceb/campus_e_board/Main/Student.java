@@ -33,9 +33,9 @@ public class Student extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Section"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        pagerStudent = (ViewPager)findViewById(R.id.pagerStudent);
+        pagerStudent = (ViewPager) findViewById(R.id.pagerStudent);
         adapter = new Adapter(getSupportFragmentManager());
-        adapter.student=true;
+        adapter.student = true;
         pagerStudent.setAdapter(adapter);
 
         pagerStudent.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
