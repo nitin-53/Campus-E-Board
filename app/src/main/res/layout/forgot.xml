@@ -33,7 +33,8 @@
             android:hint="Registered Email Id"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <Button
             android:id="@+id/btn_registered_emailId"
