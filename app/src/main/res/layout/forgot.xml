@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="Enter your registered Email Id...."
+            android:text="Enter your registered Email Id..."
             android:textColor="#000"
-            android:textSize="23sp" />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/registered_emailId"
@@ -40,7 +40,7 @@
             style="@style/DefaultButtonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/button_default_bg"
             android:padding="10dp"
             android:padding_Top="15dp"
