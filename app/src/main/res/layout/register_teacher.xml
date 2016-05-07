@@ -24,7 +24,8 @@
             android:hint="Name"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <EditText
             android:id="@+id/teacher_email"
@@ -37,7 +38,8 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <EditText
             android:id="@+id/teacher_phn"
@@ -50,7 +52,8 @@
             android:inputType="number"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <Button
             android:id="@+id/btn_teacher_signUp"
