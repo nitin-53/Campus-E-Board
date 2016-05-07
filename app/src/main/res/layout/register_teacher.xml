@@ -21,10 +21,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_top_bg"
             android:drawableLeft="@drawable/being"
+            android:drawablePadding="8dp"
             android:hint="Name"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <EditText
             android:id="@+id/teacher_email"
@@ -33,11 +35,13 @@
             android:layout_marginTop="-2dp"
             android:background="@drawable/edittext_default_bg"
             android:drawableLeft="@drawable/mess"
+            android:drawablePadding="8dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <EditText
             android:id="@+id/teacher_phn"
@@ -46,11 +50,13 @@
             android:layout_marginTop="-2dp"
             android:background="@drawable/edittext_bottom_bg"
             android:drawableLeft="@drawable/dial"
+            android:drawablePadding="8dp"
             android:hint="Phone No"
             android:inputType="number"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <EditText
             android:id="@+id/teacher_password"
@@ -58,11 +64,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:background="@drawable/edittext_bottom_bg"
+            android:drawableLeft="@drawable/passwd"
+            android:drawablePadding="8dp"
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <Button
             android:id="@+id/btn_teacher_signUp"

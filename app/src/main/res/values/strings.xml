@@ -14,7 +14,10 @@
     <string name="student">Student</string>
     <string name="teacher">Teacher</string>
     <string name="register_as">Register As</string>
+    <string name="enter_reg_email">Enter Registred Email</string>
     <string name="close">Close</string>
+    <string name="get_reg_email">Enter your Registered Email ID</string>
+    <string name="submit">Submit</string>
     <string name="splashChk">Don\'t show this again</string>
     <string name="login_as">Login As</string>
     <string name="login_preference_file">xyz.leapmind.ceb.campus_e_board.Main.LOGIN_PREFERENCE_FILE_KEY</string>
