@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:background="@drawable/edittext_bottom_bg"
-            android:drawableLeft="@drawable/Forgot_Password"
+            android:drawableLeft="@drawable/passwd"
             android:drawablePadding="8dp"
             android:hint="Password"
             android:inputType="textPassword"
