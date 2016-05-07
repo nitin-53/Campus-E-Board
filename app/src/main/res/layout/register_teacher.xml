@@ -65,7 +65,8 @@
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <Button
             android:id="@+id/btn_teacher_signUp"
