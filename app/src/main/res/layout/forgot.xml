@@ -43,7 +43,6 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/button_default_bg"
             android:padding="10dp"
-            android:padding_Top="15dp"
             android:text="Submit" />
     </LinearLayout>
 

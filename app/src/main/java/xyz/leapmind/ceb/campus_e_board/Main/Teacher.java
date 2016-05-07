@@ -29,7 +29,7 @@ public class Teacher extends AppCompatActivity {
 
         pagerTeacher = (ViewPager) findViewById(R.id.pagerTeacher);
         adapter = new Adapter(getSupportFragmentManager());
-        adapter.student=false;
+        adapter.student = false;
         pagerTeacher.setAdapter(adapter);
 
         pagerTeacher.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

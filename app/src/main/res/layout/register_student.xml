@@ -122,6 +122,19 @@
                 android:textColorHint="#bbbbbb"
                 android:textCursorDrawable="@null" />
 
+            <EditText
+                android:id="@+id/student_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/edittext_bottom_bg"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null"/>
+
             <Button
                 android:id="@+id/btn_student_signUp"
                 style="@style/DefaultButtonText"
@@ -129,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_default_bg"
+                android:onClick="studentSignUp"
                 android:padding="10dp"
                 android:text="Sign Up" />
 
