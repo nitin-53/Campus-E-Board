@@ -8,7 +8,7 @@
     <color name="game_bg">#DDDDDD</color>
     <color name="line">#000000</color>
     <color name="position">#FF0000</color>
-    <color name="btn_unpressed">#64b5f6</color>
-    <color name="flat_btn_pressed">#f06292</color>
+    <color name="btn_unpressed">#009999</color>
+    <color name="flat_btn_pressed">#ffff66</color>
     <color name="flat_btn_text">#e3f2fd</color>
 </resources>
