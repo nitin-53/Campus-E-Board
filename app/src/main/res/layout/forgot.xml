@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_top_bg"
             android:drawableLeft="@drawable/mess"
+            android:drawablePadding="8dp"
             android:hint="Registered Email Id"
             android:padding="10dp"
             android:singleLine="true"
