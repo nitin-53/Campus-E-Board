@@ -32,10 +32,9 @@ public class Forgot extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             emailEditText.setText("");
         } else {
-            Intent intent = new Intent(
-                    Forgot.this,
-                    ForgotOTP.class);
-            startActivity(intent);
+            Intent intent_obj = new Intent(Forgot.this, ForgotOTP.class);
+            startActivity(intent_obj);
+            finish();
         }
     }
 }

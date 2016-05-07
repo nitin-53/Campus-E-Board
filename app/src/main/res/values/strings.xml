@@ -16,13 +16,17 @@
     <string name="register_as">Register As</string>
     <string name="enter_reg_email">Enter Registred Email</string>
     <string name="close">Close</string>
-    <string name="get_reg_email">Enter your Registered Email ID</string>
+    <string name="get_reg_email">Enter Registered Email-ID</string>
     <string name="submit">Submit</string>
     <string name="splashChk">Don\'t show this again</string>
     <string name="login_as">Login As</string>
     <string name="login_preference_file">xyz.leapmind.ceb.campus_e_board.Main.LOGIN_PREFERENCE_FILE_KEY</string>
     <string name="student_login_preference">check_student_login</string>
     <string name="teacher_login_preference">check_teacher_login</string>
+    <string name="unique_code">Enter Unique Code sent in Email</string>
+    <string name="enter_unique_code">Enter Unique Code</string>
+    <string name="new_passwd">Enter New Password</string>
+    <string name="enter_newpasswd">New Password</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
