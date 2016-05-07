@@ -27,7 +27,8 @@
                 android:hint="Name"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_email"
@@ -40,7 +41,8 @@
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_phn"
@@ -53,7 +55,8 @@
                 android:inputType="number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_rollNo"
@@ -64,7 +67,8 @@
                 android:hint="Roll Number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_class"
@@ -76,7 +80,8 @@
                 android:inputType="text"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_semester"
@@ -88,7 +93,8 @@
                 android:inputType="number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_section"
@@ -100,7 +106,8 @@
                 android:inputType="text"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <EditText
                 android:id="@+id/student_group"
@@ -112,7 +119,8 @@
                 android:inputType="number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColorHint="#bbbbbb"
+                android:textCursorDrawable="@null" />
 
             <Button
                 android:id="@+id/btn_student_signUp"
