@@ -46,23 +46,4 @@ public class Adapter extends FragmentPagerAdapter {
             return 2;
     }
 
-
-    public CharSequence getPageTitle(int pos) {
-        if (student) {
-            if (pos == 0)
-                return "Public Notices";
-            else if (pos == 1)
-                return "Projects";
-            else if (pos == 2)
-                return "Class";
-            else if (pos == 3)
-                return "Group";
-        } else {
-            if (pos == 0)
-                return "Recent";
-            else if (pos == 1)
-                return "Public Notices";
-        }
-        return super.getPageTitle(pos);
-    }
 }
