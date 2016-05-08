@@ -27,6 +27,7 @@
     <string name="enter_unique_code">Enter Unique Code</string>
     <string name="new_passwd">Enter New Password</string>
     <string name="enter_newpasswd">New Password</string>
+    <string name="confirm_passwd">Confirm Password</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
