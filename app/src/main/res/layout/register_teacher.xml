@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -48,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
-            android:background="@drawable/edittext_bottom_bg"
+            android:background="@drawable/edittext_default_bg"
             android:drawableLeft="@drawable/dial"
             android:drawablePadding="8dp"
             android:hint="Phone No"
@@ -59,11 +62,25 @@
             android:textCursorDrawable="@null" />
 
         <EditText
+            android:id="@+id/teacher_tf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/edittext_default_bg"
+            android:drawableLeft="@drawable/key"
+            android:drawablePadding="8dp"
+            android:hint="P.F. Number"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
+
+        <EditText
             android:id="@+id/teacher_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
-            android:background="@drawable/edittext_bottom_bg"
+            android:background="@drawable/edittext_default_bg"
             android:drawableLeft="@drawable/passwd"
             android:drawablePadding="8dp"
             android:hint="Password"
@@ -72,6 +89,20 @@
             android:singleLine="true"
             android:textColorHint="#bbbbbb"
             android:textCursorDrawable="@null" />
+
+        <EditText
+            android:id="@+id/conf_teacher_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/edittext_bottom_bg"
+            android:drawableLeft="@drawable/passwd"
+            android:drawablePadding="8dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorHint="#bbbbbb" />
 
         <Button
             android:id="@+id/btn_teacher_signUp"
@@ -86,3 +117,4 @@
 
 
 </RelativeLayout>
+</ScrollView>
