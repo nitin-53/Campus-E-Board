@@ -25,12 +25,13 @@
             android:textColor="@color/register_as"
             android:textSize="32sp"
             android:textStyle="bold" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <Button
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
             android:id="@+id/btn_student"
             style="@style/DefaultButtonText"
             android:layout_width="0dp"
@@ -61,6 +62,6 @@
             android:text="@string/teacher"
             android:textAllCaps="false" />
 
-</LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
