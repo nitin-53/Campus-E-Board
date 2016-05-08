@@ -21,34 +21,57 @@
             android:background="@drawable/edittext_top_bg"
             android:gravity="left"
             android:padding="10dp"
-            android:text="@string/get_reg_email"
+            android:text="@string/unique_code"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/registered_emailId"
+            android:id="@+id/unique_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_default_bg"
+            android:hint="@string/enter_unique_code"
+            android:inputType="number"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_default_bg"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="@string/new_passwd"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/new_passwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_bottom_bg"
-            android:drawableLeft="@drawable/mess"
+            android:hint="@string/enter_newpasswd"
+            android:drawableLeft="@drawable/passwd"
             android:drawablePadding="8dp"
-            android:hint="@string/enter_reg_email"
+            android:inputType="number"
             android:padding="10dp"
             android:singleLine="true"
             android:textColorHint="#bbbbbb"
             android:textCursorDrawable="@null" />
 
         <Button
-            android:id="@+id/btn_registered_emailId"
+            android:id="@+id/btn_new_passwd"
             style="@style/DefaultButtonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/button_default_bg"
-            android:onClick="forgotPassword"
             android:padding="10dp"
             android:text="@string/submit" />
     </LinearLayout>
 
 </RelativeLayout>
+
 
