@@ -4,11 +4,13 @@ package xyz.leapmind.ceb.campus_e_board.Main;
  * Created by nitin on 11/4/16.
  */
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,13 +18,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import xyz.leapmind.ceb.campus_e_board.AppAssist.SessionManager;
+import xyz.leapmind.ceb.campus_e_board.AppControl.AppConfig;
+import xyz.leapmind.ceb.campus_e_board.AppControl.AppController;
 import xyz.leapmind.ceb.campus_e_board.R;
 
 public class Login extends AppCompatActivity implements OnClickListener {
+    private static final String TAG = Login.class.getSimpleName();
     private EditText userId, pass;
     private Button login1;
-    private String get_userName, get_password;
+    private String userName, password, rollNo;
     private TextView forgot;
+    private ProgressDialog pDialog;
+    private SessionManager session;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +55,21 @@ public class Login extends AppCompatActivity implements OnClickListener {
 
         login1.setOnClickListener(Login.this);
         forgot.setOnClickListener(Login.this);
+
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
+        // Session manager
+        session = new SessionManager(getApplicationContext());
+
+        // Check if user is already logged in or not
+        if (session.isLoggedIn()) {
+            // User is already logged in. Take him to main activity
+            Intent intent = new Intent(Login.this, Student.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 
@@ -54,14 +88,16 @@ public class Login extends AppCompatActivity implements OnClickListener {
 
         switch (v.getId()) {
             case R.id.btn_login:
-                get_userName = userId.getText().toString();
-                get_password = pass.getText().toString();
+                userName = userId.getText().toString().trim();
+                password = pass.getText().toString().trim();
 
-                if (get_userName.equals("") || get_password.equals("")) {
+                if (userName.equals("") || password.equals("")) {
                     Toast.makeText(Login.this, "Don't leave empty fields", Toast.LENGTH_SHORT).show();
                 } else if (isThisStudent) {
-                    if (get_userName.matches("^[Uu][EeMm]\\d{6}$")) {
-                        if (get_userName.equals("UE128001") && get_password.equals("123")) {
+                    if (userName.matches("^[Uu][EeMm]\\d{6}$")) {
+                        rollNo = userName.toUpperCase();
+                        checkLogin(rollNo, password);
+                        /*if (userName.equals("UE128001") && password.equals("123")) {
                             Toast.makeText(Login.this, "Successfully Logged in !", Toast.LENGTH_SHORT).show();
                             Intent obj1 = new Intent(Login.this, Student.class);
                             startActivity(obj1);
@@ -70,15 +106,15 @@ public class Login extends AppCompatActivity implements OnClickListener {
                             Toast.makeText(Login.this, "INVALID CREDENTIALS !", Toast.LENGTH_SHORT).show();
                             userId.setText("");
                             pass.setText("");
-                        }
+                        }*/
                     } else {
                         Toast.makeText(Login.this, "UserID Pattern is wrong", Toast.LENGTH_SHORT).show();
                         userId.setText("");
                         pass.setText("");
                     }
                 } else if (isThisTeacher) {
-                    if (android.util.Patterns.EMAIL_ADDRESS.matcher(get_userName).matches()) {
-                        if (get_userName.equals("ks18994ks@gmail.com") && get_password.equals("123")) {
+                    if (android.util.Patterns.EMAIL_ADDRESS.matcher(userName).matches()) {
+                        if (userName.equals("ks18994ks@gmail.com") && password.equals("123")) {
                             Toast.makeText(Login.this, "Successfully Logged in !", Toast.LENGTH_SHORT).show();
                             Intent obj = new Intent(Login.this, Teacher.class);
                             startActivity(obj);
@@ -95,12 +131,12 @@ public class Login extends AppCompatActivity implements OnClickListener {
                     }
                 }
 
-                /*else if (get_userName.equals("Teacher") && get_password.equals("123")) {
+                /*else if (userName.equals("Teacher") && password.equals("123")) {
                     Toast.makeText(Login.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
                     Intent obj = new Intent(Login.this, Teacher.class);
                     startActivity(obj);
                     finish();
-                } else if (get_userName.equals("Student") && get_password.equals("123")) {
+                } else if (userName.equals("Student") && password.equals("123")) {
                     Toast.makeText(Login.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
                     Intent obj1 = new Intent(Login.this, Student.class);
                     startActivity(obj1);
@@ -121,6 +157,90 @@ public class Login extends AppCompatActivity implements OnClickListener {
             default:
                 break;
         }
+    }
+
+    /**
+     * function to verify login details in mysql db
+     */
+    private void checkLogin(final String userName, final String password) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_login";
+
+        pDialog.setMessage("Logging in ...");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_LOGIN, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Login Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    // Check for error node in json
+                    if (!error) {
+                        // user successfully logged in
+                        Toast.makeText(Login.this, "Successfully Logged in !", Toast.LENGTH_SHORT).show();
+                        // Create login session
+                        session.setLogin(true);
+
+                        // Launch main activity
+                        Intent intent = new Intent(Login.this,
+                                Student.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        // Error in login. Get the error message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Login Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("rollNo", userName);
+                params.put("password", password);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 
 }
