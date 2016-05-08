@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xyz.leapmind.ceb.campus_e_board">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name="xyz.leapmind.ceb.campus_e_board.AppControl.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,19 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Teacher"></activity>
-        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Student"></activity>
+        <activity
+            android:name="xyz.leapmind.ceb.campus_e_board.Main.Teacher"
+            android:label="Campus-E-Borad">
+
+        </activity>
+        <activity
+            android:name="xyz.leapmind.ceb.campus_e_board.Main.Student"
+            android:description="@string/action_settings"
+            android:label="Campus-E-Board"></activity>
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Forgot"></activity>
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Register"></activity>
         <activity
             android:name="xyz.leapmind.ceb.campus_e_board.Main.Login"
             android:windowSoftInputMode="adjustResize"></activity>
-        <activity
-            android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterTeacher"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity
-            android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterStudent"
-            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterTeacher"></activity>
+        <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.RegisterStudent"></activity>
 
         <activity android:name="xyz.leapmind.ceb.campus_e_board.Main.Splash"></activity>
 
