@@ -147,7 +147,8 @@ public class RegisterStudent extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
                     if (!error) {
                         // User successfully stored in MySQL
-                        Toast.makeText(getApplicationContext(), "User successfully registered. Try login now!",
+                        Toast.makeText(getApplicationContext(), "User successfully registered. " +
+                                        "Please verify email by clicking link in email!",
                                 Toast.LENGTH_LONG).show();
 
                         // Launch login activity

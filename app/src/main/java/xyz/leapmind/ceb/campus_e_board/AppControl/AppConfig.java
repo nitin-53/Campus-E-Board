@@ -9,4 +9,7 @@ public class AppConfig {
 
     // Server user register url
     public static String URL_REGISTER = "http://leapmind.xyz/Register.php";
+
+    // Server user forgot email url
+    public static String URL_FORGOT_EMAIL = "http://leapmind.xyz/ForgotEmail.php";
 }
