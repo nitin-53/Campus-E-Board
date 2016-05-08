@@ -19,108 +19,137 @@
             android:padding="10dp">
 
             <EditText
-                android:id="@+id/etUserName"
+                android:id="@+id/student_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_top_bg"
-                android:drawableLeft="@drawable/user"
+                android:drawableLeft="@drawable/being"
+                android:drawablePadding="8dp"
                 android:hint="Name"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/student_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:drawableLeft="@drawable/email"
+                android:drawableLeft="@drawable/mess"
+                android:drawablePadding="8dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/etPhn"
+                android:id="@+id/student_phn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:drawableLeft="@drawable/phone"
+                android:drawableLeft="@drawable/dial"
+                android:drawablePadding="8dp"
                 android:hint="Phone No"
                 android:inputType="number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/etRollNo"
+                android:id="@+id/student_rollNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
+                android:drawablePadding="8dp"
                 android:hint="Roll Number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/etClass"
+            <Spinner
+                android:id="@+id/student_class"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Class"
-                android:inputType="text"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:entries="@array/student_class"
+                android:padding="4dp" />
 
-            <EditText
-                android:id="@+id/etSemester"
+            <Spinner
+                android:id="@+id/student_semester"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Semester"
-                android:inputType="number"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:entries="@array/student_semester"
+                android:padding="4dp" />
 
-            <EditText
-                android:id="@+id/etSection"
+            <Spinner
+                android:id="@+id/student_section"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Section"
-                android:inputType="text"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:entries="@array/student_section"
+                android:padding="4dp" />
+
+            <Spinner
+                android:id="@+id/student_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/edittext_default_bg"
+                android:entries="@array/student_group"
+                android:padding="4dp" />
 
             <EditText
-                android:id="@+id/etGroup"
+                android:id="@+id/student_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/edittext_default_bg"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/student_conf_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_bottom_bg"
-                android:hint="Group"
-                android:inputType="number"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textSize="16sp" />
 
             <Button
-                android:id="@+id/btnSingIn"
+                android:id="@+id/btn_student_signUp"
                 style="@style/DefaultButtonText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_default_bg"
+                android:onClick="studentSignUp"
                 android:padding="10dp"
                 android:text="Sign Up" />
 
