@@ -2,7 +2,6 @@ package xyz.leapmind.ceb.campus_e_board.Main;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import xyz.leapmind.ceb.campus_e_board.R;
 

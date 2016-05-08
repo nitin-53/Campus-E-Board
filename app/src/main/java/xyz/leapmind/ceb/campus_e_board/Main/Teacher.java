@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 import xyz.leapmind.ceb.campus_e_board.R;
 
 public class Teacher extends AppCompatActivity {

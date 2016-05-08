@@ -28,8 +28,10 @@
                 android:hint="Name"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/student_email"
@@ -43,8 +45,10 @@
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/student_phn"
@@ -58,8 +62,10 @@
                 android:inputType="number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/student_rollNo"
@@ -67,78 +73,84 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Roll Number"
+                android:drawablePadding="8dp"
+                android:hint=" Roll Number"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/student_class"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Class"
-                android:inputType="text"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:entries="@array/student_class"
+                android:padding="4dp" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/student_semester"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Semester"
-                android:inputType="number"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:entries="@array/student_semester"
+                android:padding="4dp" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/student_section"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
                 android:background="@drawable/edittext_default_bg"
-                android:hint="Section"
-                android:inputType="text"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:entries="@array/student_section"
+                android:padding="4dp" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/student_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
-                android:background="@drawable/edittext_bottom_bg"
-                android:hint="Group"
-                android:inputType="number"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null" />
+                android:background="@drawable/edittext_default_bg"
+                android:entries="@array/student_group"
+                android:padding="4dp" />
 
             <EditText
                 android:id="@+id/student_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
-                android:background="@drawable/edittext_bottom_bg"
+                android:background="@drawable/edittext_default_bg"
                 android:drawableLeft="@drawable/passwd"
                 android:drawablePadding="8dp"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColorHint="#bbbbbb"
-                android:textCursorDrawable="@null"/>
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/student_conf_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/edittext_bottom_bg"
+                android:drawableLeft="@drawable/passwd"
+                android:drawablePadding="8dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="#7e7e7e"
+                android:textColorHint="#7e7e7e"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btn_student_signUp"
