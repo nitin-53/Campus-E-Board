@@ -19,65 +19,59 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:padding="10dp"
+            android:layout_marginTop="8dp"
             android:text="@string/unique_code"
-            android:textColor="#fff"
-            android:textSize="16sp" />
+            android:textColor="#ffffff" />
 
         <EditText
             android:id="@+id/unique_no"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_unique_code"
+            android:layout_marginTop="8dp"
+            android:background="@null"
             android:inputType="number"
-            android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb"
+            android:textColor="#ffffff"
             android:textCursorDrawable="@null" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:padding="10dp"
+            android:layout_marginTop="8dp"
             android:text="@string/new_passwd"
-            android:textColor="#fff"
-            android:textSize="16sp" />
+            android:textColor="#ffffff" />
 
         <EditText
             android:id="@+id/new_passwd"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@null"
             android:drawableLeft="@drawable/passwd"
             android:drawablePadding="8dp"
-            android:hint="@string/enter_newpasswd"
             android:inputType="textPassword"
-            android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb"
+            android:textColor="#ffffff"
             android:textCursorDrawable="@null" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:padding="10dp"
+            android:layout_marginTop="8dp"
             android:text="@string/confirm_passwd"
-            android:textColor="#fff"
-            android:textSize="16sp" />
+            android:textColor="#ffffff" />
 
         <EditText
             android:id="@+id/confirm_passwd"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@null"
             android:drawableLeft="@drawable/passwd"
             android:drawablePadding="8dp"
-            android:hint="@string/confirm_passwd"
             android:inputType="textPassword"
-            android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb"
+            android:textColor="#ffffff"
             android:textCursorDrawable="@null" />
 
 
@@ -86,6 +80,7 @@
             style="@style/DefaultButtonText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/button_default_bg"
             android:onClick="forgotOtpValidatons"

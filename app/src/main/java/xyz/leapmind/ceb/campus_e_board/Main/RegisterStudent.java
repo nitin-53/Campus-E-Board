@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -33,10 +35,35 @@ public class RegisterStudent extends AppCompatActivity {
     private static final String TAG = RegisterStudent.class.getSimpleName();
     private ProgressDialog pDialog;
     private SessionManager session;
+    private Spinner classSpinner, semSpinner, sectionSpinner, groupSpinner;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_student);
+
+        //Spinners
+        classSpinner = (Spinner) findViewById(R.id.student_class);
+        semSpinner = (Spinner) findViewById(R.id.student_semester);
+        sectionSpinner = (Spinner) findViewById(R.id.student_section);
+        groupSpinner = (Spinner) findViewById(R.id.student_group);
+
+        //Spinner using Array Adapter
+        String[] class_list = getResources().getStringArray(R.array.student_class);
+        String[] sem_list = getResources().getStringArray(R.array.student_semester);
+        String[] sec_list = getResources().getStringArray(R.array.student_section);
+        String[] grp_list = getResources().getStringArray(R.array.student_group);
+
+        ArrayAdapter<String> adp_class, adp_sem, adp_section, adp_group;
+        adp_class = new ArrayAdapter<String>(this, R.layout.spinner_style, R.id.txt, class_list);
+        classSpinner.setAdapter(adp_class);
+        adp_sem = new ArrayAdapter<String>(this, R.layout.spinner_style, R.id.txt, sem_list);
+        semSpinner.setAdapter(adp_sem);
+
+        adp_section = new ArrayAdapter<String>(this, R.layout.spinner_style, R.id.txt, sec_list);
+        sectionSpinner.setAdapter(adp_section);
+
+        adp_group = new ArrayAdapter<String>(this, R.layout.spinner_style, R.id.txt, grp_list);
+        groupSpinner.setAdapter(adp_group);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -60,24 +87,21 @@ public class RegisterStudent extends AppCompatActivity {
         EditText emailEditText = (EditText) findViewById(R.id.student_email);
         EditText phnEditText = (EditText) findViewById(R.id.student_phn);
         EditText roll_noEditText = (EditText) findViewById(R.id.student_rollNo);
-        EditText classEditText = (EditText) findViewById(R.id.student_class);
-        EditText semEditText = (EditText) findViewById(R.id.student_semester);
-        EditText sectionEditText = (EditText) findViewById(R.id.student_section);
-        EditText groupEditText = (EditText) findViewById(R.id.student_group);
         EditText passwordEditText = (EditText) findViewById(R.id.student_password);
+        EditText conf_passwordEditText = (EditText) findViewById(R.id.student_conf_password);
 
         String name = nameEditText.getText().toString().trim();
         String email = emailEditText.getText().toString().trim();
         String phn = phnEditText.getText().toString().trim();
         String rollNo = roll_noEditText.getText().toString().trim();
-        String clas = classEditText.getText().toString().trim();
-        String sem = semEditText.getText().toString().trim();
-        String section = sectionEditText.getText().toString().trim();
-        String group = groupEditText.getText().toString().trim();
+        String clas = classSpinner.getSelectedItem().toString().trim();
+        String sem = semSpinner.getSelectedItem().toString().trim();
+        String section = sectionSpinner.getSelectedItem().toString().trim();
+        String group = groupSpinner.getSelectedItem().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
         if (name.equals("") || email.equals("") || phn.equals("") || rollNo.equals("") ||
-                clas.equals("") || sem.equals("") || password.equals("")) {
+                clas.equals("Class") || sem.equals("Semester") || password.equals("")) {
             Toast.makeText(RegisterStudent.this, "Only Section or Group may be empty",
                     Toast.LENGTH_SHORT).show();
         } else if (!name.matches("^[\\p{L} .'-]+$")) {
@@ -96,7 +120,7 @@ public class RegisterStudent extends AppCompatActivity {
             Toast.makeText(RegisterStudent.this, "Roll no is not in proper format",
                     Toast.LENGTH_SHORT).show();
             roll_noEditText.setText("");
-        } else if (!clas.matches("^[a-zA-Z]{2,3}[ (?! )]?[a-zA-Z]{0,4}$")) {
+        } /*else if (!clas.matches("^[a-zA-Z]{2,3}[ (?! )]?[a-zA-Z]{0,4}$")) {
             Toast.makeText(RegisterStudent.this, "Class is not in proper format",
                     Toast.LENGTH_SHORT).show();
             classEditText.setText("");
@@ -116,7 +140,7 @@ public class RegisterStudent extends AppCompatActivity {
             Toast.makeText(RegisterStudent.this, "Password Length [6,15] and may include alphabets" +
                     "numbers and @, _, #", Toast.LENGTH_SHORT).show();
             passwordEditText.setText("");
-        } else {
+        } */ else {
             registerUser(name, email, phn, rollNo, clas, sem, section, group, password);
         }
     }
