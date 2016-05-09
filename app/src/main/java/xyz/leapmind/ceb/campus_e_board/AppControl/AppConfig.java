@@ -12,4 +12,7 @@ public class AppConfig {
 
     // Server user forgot email url
     public static String URL_FORGOT_EMAIL = "http://leapmind.xyz/ForgotEmail.php";
+
+    // Server user reset password url
+    public static String URL_RESET_PASSWORD = "http://leapmind.xyz/ResetPassword.php";
 }

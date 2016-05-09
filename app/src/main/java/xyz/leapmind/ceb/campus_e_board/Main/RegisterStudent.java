@@ -33,6 +33,7 @@ import xyz.leapmind.ceb.campus_e_board.R;
 
 public class RegisterStudent extends AppCompatActivity {
     private static final String TAG = RegisterStudent.class.getSimpleName();
+    String msg = "Android : ";
     private ProgressDialog pDialog;
     private SessionManager session;
     private Spinner classSpinner, semSpinner, sectionSpinner, groupSpinner;
@@ -82,6 +83,21 @@ public class RegisterStudent extends AppCompatActivity {
         }
     }
 
+    /**
+     * Called just before the activity is destroyed.
+     */
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(msg, "The onDestroy() event");
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish(); // or do something else
+    }
+
     public void studentSignUp(View view) {
         EditText nameEditText = (EditText) findViewById(R.id.student_name);
         EditText emailEditText = (EditText) findViewById(R.id.student_email);
@@ -99,6 +115,7 @@ public class RegisterStudent extends AppCompatActivity {
         String section = sectionSpinner.getSelectedItem().toString().trim();
         String group = groupSpinner.getSelectedItem().toString().trim();
         String password = passwordEditText.getText().toString().trim();
+        String conf_password = conf_passwordEditText.getText().toString().trim();
 
         if (name.equals("") || email.equals("") || phn.equals("") || rollNo.equals("") ||
                 clas.equals("Class") || sem.equals("Semester") || password.equals("")) {
@@ -120,7 +137,8 @@ public class RegisterStudent extends AppCompatActivity {
             Toast.makeText(RegisterStudent.this, "Roll no is not in proper format",
                     Toast.LENGTH_SHORT).show();
             roll_noEditText.setText("");
-        } /*else if (!clas.matches("^[a-zA-Z]{2,3}[ (?! )]?[a-zA-Z]{0,4}$")) {
+        }
+        /*else if (!clas.matches("^[a-zA-Z]{2,3}[ (?! )]?[a-zA-Z]{0,4}$")) {
             Toast.makeText(RegisterStudent.this, "Class is not in proper format",
                     Toast.LENGTH_SHORT).show();
             classEditText.setText("");
@@ -136,11 +154,16 @@ public class RegisterStudent extends AppCompatActivity {
             Toast.makeText(RegisterStudent.this, "Group can be either 1 or 2 or 3 or empty",
                     Toast.LENGTH_SHORT).show();
             groupEditText.setText("");
-        } else if (!password.matches("^[a-zA-Z (?! )0-9@#_]{6,15}$")) {
+        } */
+        else if (!password.matches("^[a-zA-Z (?! )0-9@#_]{6,15}$")) {
             Toast.makeText(RegisterStudent.this, "Password Length [6,15] and may include alphabets" +
                     "numbers and @, _, #", Toast.LENGTH_SHORT).show();
             passwordEditText.setText("");
-        } */ else {
+        } else if (!password.equals(conf_password)) {
+            Toast.makeText(RegisterStudent.this, "Password does not match", Toast.LENGTH_SHORT).show();
+            passwordEditText.setText("");
+            conf_passwordEditText.setText("");
+        } else {
             registerUser(name, email, phn, rollNo, clas, sem, section, group, password);
         }
     }
@@ -179,6 +202,7 @@ public class RegisterStudent extends AppCompatActivity {
                         Intent intent = new Intent(
                                 RegisterStudent.this,
                                 MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
                     } else {
@@ -200,7 +224,7 @@ public class RegisterStudent extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                        error.toString(), Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {

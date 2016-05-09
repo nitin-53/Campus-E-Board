@@ -36,13 +36,13 @@ import xyz.leapmind.ceb.campus_e_board.R;
 
 public class Login extends AppCompatActivity implements OnClickListener {
     private static final String TAG = Login.class.getSimpleName();
+    String msg = "Android : ";
     private EditText userId, pass;
     private Button login1;
     private String userName, password, rollNo;
     private TextView forgot;
     private ProgressDialog pDialog;
     private SessionManager session;
-
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +71,22 @@ public class Login extends AppCompatActivity implements OnClickListener {
             finish();
         }
 
+    }
+
+    /**
+     * Called just before the activity is destroyed.
+     */
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(msg, "The onDestroy() event");
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish(); // or do something else
     }
 
     @Override
@@ -191,6 +207,7 @@ public class Login extends AppCompatActivity implements OnClickListener {
                         // Launch main activity
                         Intent intent = new Intent(Login.this,
                                 Student.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
                     } else {
@@ -212,7 +229,7 @@ public class Login extends AppCompatActivity implements OnClickListener {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Login Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                        error.toString(), Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {

@@ -31,19 +31,34 @@ import xyz.leapmind.ceb.campus_e_board.R;
 
 public class Forgot extends AppCompatActivity {
     private static final String TAG = Forgot.class.getSimpleName();
+    String msg = "Android : ";
     private ProgressDialog pDialog;
     private SessionManager session;
-
+    private String email;
+    private EditText emailEditText;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forgot);
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
+
+    }
+
+    /**
+     * Called just before the activity is destroyed.
+     */
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(msg, "The onDestroy() event");
     }
 
     public void forgotPassword(View view) {
-        EditText emailEditText = (EditText) findViewById(R.id.registered_emailId);
-        String email = emailEditText.getText().toString().trim();
-
+        emailEditText = (EditText) findViewById(R.id.registered_emailId);
+        email = emailEditText.getText().toString().trim();
         if (email.equals("")) {
             Toast.makeText(Forgot.this, "Enter Email-Id",
                     Toast.LENGTH_SHORT).show();
@@ -52,14 +67,14 @@ public class Forgot extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             emailEditText.setText("");
         } else {
-            sendMail(email);
+            requestMail(email);
         }
     }
 
     /**
-     * function to verify login details in mysql db
+     * function to send OTP through mail
      */
-    private void sendMail(final String email) {
+    private void requestMail(final String email) {
         // Tag used to cancel the request
         String tag_string_req = "req_send_email";
 
@@ -83,11 +98,11 @@ public class Forgot extends AppCompatActivity {
                         // user successfully submitted email
                         Toast.makeText(Forgot.this, "Email submitted successfully !", Toast.LENGTH_SHORT).show();
                         // Create login session
-                        session.setLogin(true);
+                        //session.setLogin(true);
 
-                        // Launch main activity
-                        Intent intent = new Intent(Forgot.this,
-                                ForgotOTP.class);
+                        // Launch ForgotOTP activity
+                        Intent intent = new Intent(Forgot.this, ForgotOTP.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
                     } else {
@@ -109,7 +124,7 @@ public class Forgot extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Email submission Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                        error.toString(), Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {

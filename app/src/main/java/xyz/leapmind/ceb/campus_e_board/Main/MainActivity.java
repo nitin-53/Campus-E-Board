@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
                 Intent obj1 = new Intent(MainActivity.this, Login.class);
                 startActivity(obj1);
+                finish();
                 break;
 
             case R.id.btn_login_teacher:
@@ -83,12 +84,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
                 Intent obj2 = new Intent(MainActivity.this, Login.class);
                 startActivity(obj2);
-
+                finish();
                 break;
 
             case R.id.btn_reg:
                 Intent obj3 = new Intent(MainActivity.this, Register.class);
                 startActivity(obj3);
+                finish();
                 break;
 
         }

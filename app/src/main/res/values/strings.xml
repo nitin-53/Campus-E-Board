@@ -45,14 +45,14 @@
 
     <string-array name="student_semester">
         <item>Semester</item>
-        <item>1st</item>
-        <item>2nd</item>
-        <item>3rd</item>
-        <item>4th</item>
-        <item>5th</item>
-        <item>6th</item>
-        <item>7th</item>
-        <item>8th</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 
     <string-array name="student_section">
