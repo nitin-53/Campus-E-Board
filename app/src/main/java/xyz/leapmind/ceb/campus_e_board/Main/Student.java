@@ -17,15 +17,19 @@ import android.view.MenuItem;
 import xyz.leapmind.ceb.campus_e_board.AppAssist.SessionManager;
 import xyz.leapmind.ceb.campus_e_board.R;
 
+//import android.graphics.Movie;
+
 public class Student extends AppCompatActivity {
     Adapter adapter;
     ViewPager pagerStudent;
     String msg = "Android : ";
     private SessionManager session;
 
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student);
+
 
         // Session manager
         session = new SessionManager(getApplicationContext());
@@ -64,6 +68,7 @@ public class Student extends AppCompatActivity {
             }
         });
     }
+
 
     /**
      * Called just before the activity is destroyed.
