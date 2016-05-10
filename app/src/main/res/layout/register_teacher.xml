@@ -62,7 +62,7 @@
             android:textCursorDrawable="@null" />
 
         <EditText
-            android:id="@+id/teacher_tf"
+            android:id="@+id/teacher_pf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
@@ -70,6 +70,7 @@
             android:drawableLeft="@drawable/key"
             android:drawablePadding="8dp"
             android:hint="P.F. Number"
+            android:inputType="number"
             android:padding="10dp"
             android:singleLine="true"
             android:textColorHint="#bbbbbb"
@@ -102,7 +103,8 @@
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColorHint="#bbbbbb" />
+            android:textColorHint="#bbbbbb"
+            android:textCursorDrawable="@null" />
 
         <Button
             android:id="@+id/btn_teacher_signUp"
@@ -111,6 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:background="@drawable/button_default_bg"
+            android:onClick="teacherSignUp"
             android:padding="10dp"
             android:text="Sign Up" />
     </LinearLayout>

@@ -118,7 +118,7 @@ public class RegisterStudent extends AppCompatActivity {
         String conf_password = conf_passwordEditText.getText().toString().trim();
 
         if (name.equals("") || email.equals("") || phn.equals("") || rollNo.equals("") ||
-                clas.equals("Class") || sem.equals("Semester") || password.equals("")) {
+                clas.equals("Class") || sem.equals("Semester") || password.equals("") || conf_password.equals("")) {
             Toast.makeText(RegisterStudent.this, "Only Section or Group may be empty",
                     Toast.LENGTH_SHORT).show();
         } else if (!name.matches("^[\\p{L} .'-]+$")) {

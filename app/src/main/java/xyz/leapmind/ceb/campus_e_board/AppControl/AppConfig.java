@@ -15,4 +15,13 @@ public class AppConfig {
 
     // Server user reset password url
     public static String URL_RESET_PASSWORD = "http://leapmind.xyz/ResetPassword.php";
+
+
+    // Server user teacher register url
+    public static String URL_REGISTER_T_EMAIL = "http://leapmind.xyz/RegisterTeacher.php";
+
+    // Server user login url
+    public static String URL_LOGIN_T = "http://leapmind.xyz/LoginTeacher.php";
+
+
 }

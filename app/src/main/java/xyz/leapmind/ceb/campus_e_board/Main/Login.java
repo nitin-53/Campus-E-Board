@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity implements OnClickListener {
     String msg = "Android : ";
     private EditText userId, pass;
     private Button login1;
-    private String userName, password, rollNo;
+    private String userName, password, rollNo, pfn;
     private TextView forgot;
     private ProgressDialog pDialog;
     private SessionManager session;
@@ -129,8 +129,13 @@ public class Login extends AppCompatActivity implements OnClickListener {
                         pass.setText("");
                     }
                 } else if (isThisTeacher) {
-                    if (android.util.Patterns.EMAIL_ADDRESS.matcher(userName).matches()) {
-                        if (userName.equals("ks18994ks@gmail.com") && password.equals("123")) {
+                    if (userName.matches("^\\d{4}$")) {
+                        pfn = userName;
+                        checkLoginTeacher(pfn, password);
+
+
+
+                        /*if (userName.equals("ks18994ks@gmail.com") && password.equals("123")) {
                             Toast.makeText(Login.this, "Successfully Logged in !", Toast.LENGTH_SHORT).show();
                             Intent obj = new Intent(Login.this, Teacher.class);
                             startActivity(obj);
@@ -144,6 +149,7 @@ public class Login extends AppCompatActivity implements OnClickListener {
                         Toast.makeText(Login.this, "UserID Pattern is wrong", Toast.LENGTH_SHORT).show();
                         userId.setText("");
                         pass.setText("");
+                    }*/
                     }
                 }
 
@@ -249,6 +255,84 @@ public class Login extends AppCompatActivity implements OnClickListener {
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
+
+
+    /**
+     * function to verify login details in mysql db
+     */
+    private void checkLoginTeacher(final String userName, final String password) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_login";
+
+        pDialog.setMessage("Logging in ...");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_LOGIN_T, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Login Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    // Check for error node in json
+                    if (!error) {
+                        // user successfully logged in
+                        Toast.makeText(Login.this, "Successfully Logged in !", Toast.LENGTH_SHORT).show();
+                        // Create login session
+                        session.setLogin(true);
+
+                        // Launch main activity
+                        Intent intent = new Intent(Login.this,
+                                Teacher.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        // Error in login. Get the error message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Login Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.toString(), Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("pfn", userName);
+                params.put("password", password);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+
 
     private void showDialog() {
         if (!pDialog.isShowing())
